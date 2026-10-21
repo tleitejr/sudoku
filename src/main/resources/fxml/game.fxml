@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:id="root" fx:controller="com.dio.controller.GameController" styleClass="game-root">
+    <padding>
+        <Insets top="16" right="16" bottom="16" left="16"/>
+    </padding>
+    <top>
+        <HBox spacing="8" styleClass="toolbar">
+            <padding>
+                <Insets bottom="12"/>
+            </padding>
+            <Button fx:id="btnNewGame" text="Novo jogo" onAction="#onNewGame" styleClass="btn-secondary"/>
+            <Button fx:id="btnCheck" text="Verificar jogo" onAction="#onCheck" styleClass="btn-secondary"/>
+            <Button fx:id="btnStatus" text="Verificar status" onAction="#onStatus" styleClass="btn-secondary"/>
+            <Button fx:id="btnClear" text="Limpar" onAction="#onClear" styleClass="btn-secondary"/>
+            <Button fx:id="btnFinish" text="Finalizar jogo" onAction="#onFinish" styleClass="btn-primary"/>
+            <Button fx:id="btnMenu" text="Menu" onAction="#onMenu" styleClass="btn-secondary"/>
+        </HBox>
+    </top>
+    <center>
+        <GridPane fx:id="boardGrid" alignment="CENTER" styleClass="board"/>
+    </center>
+    <right>
+        <VBox spacing="12" styleClass="side-panel" alignment="TOP_CENTER">
+            <padding>
+                <Insets left="20"/>
+            </padding>
+            <Label text="Colocar número" styleClass="section-title"/>
+            <TilePane fx:id="palette" prefColumns="3" hgap="6" vgap="6" styleClass="palette"/>
+            <ToggleButton fx:id="btnDraftMode" text="Modo rascunho (P)" styleClass="btn-secondary"/>
+            <Button fx:id="btnRemove" text="Remover número (Del)" onAction="#onRemove" styleClass="btn-secondary"/>
+            <Label text="Situação" styleClass="section-title"/>
+            <VBox spacing="4" styleClass="status-panel">
+                <Label fx:id="lblStatus" styleClass="status-line"/>
+                <Label fx:id="lblErrors" styleClass="status-line"/>
+            </VBox>
+            <Label fx:id="lblFinishHint" text="Preencha todos os espaços corretamente para finalizar."
+                   wrapText="true" styleClass="hint"/>
+        </VBox>
+    </right>
+    <bottom>
+        <Label fx:id="lblMessage" wrapText="true" styleClass="message-info"/>
+    </bottom>
+</BorderPane>

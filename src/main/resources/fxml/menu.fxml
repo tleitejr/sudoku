@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.dio.controller.MenuController"
+      alignment="CENTER" spacing="14" styleClass="menu-root">
+    <padding>
+        <Insets top="40" right="40" bottom="40" left="40"/>
+    </padding>
+    <Label text="Sudoku" styleClass="title"/>
+    <Label text="Escolha a dificuldade e comece um novo jogo" styleClass="subtitle"/>
+    <ComboBox fx:id="cmbDifficulty" styleClass="combo-difficulty"/>
+    <Button fx:id="btnStart" text="Novo jogo" onAction="#onStart" styleClass="btn-primary"/>
+    <Button fx:id="btnStartCli" text="Jogar puzzle da linha de comando" onAction="#onStartCli"
+            styleClass="btn-secondary"/>
+    <Button fx:id="btnExit" text="Sair" onAction="#onExit" styleClass="btn-secondary"/>
+    <Label fx:id="lblMessage" styleClass="message-error" wrapText="true"/>
+</VBox>
